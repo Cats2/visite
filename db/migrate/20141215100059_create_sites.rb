@@ -15,7 +15,6 @@ class CreateSites < ActiveRecord::Migration
       t.integer :audioguide
       t.integer :guide
       t.integer :avis
-      t.string  :region_noms
       t.timestamps
     end
   end
