@@ -59747,3 +59747,74 @@ Processing by RegionsController#index as HTML
   Rendered regions/index.html.erb within layouts/application (2.0ms)
   [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
 Completed 200 OK in 198ms (Views: 195.0ms | ActiveRecord: 2.0ms)
+DEPRECATION WARNING: Devise.token_authentication_key= is deprecated and has no effect. (called from token_authentication_key= at (eval):6)
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-05 20:49:16 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegionsController#index as HTML
+  [1m[35mRegion Load (1.0ms)[0m  SELECT "regions".* FROM "regions"
+  Rendered regions/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 469ms (Views: 430.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/regions.css?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/site_a_visiters.css?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/sites.css?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/voyages.css?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/regions.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/site_a_visiters.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/sites.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/voyages.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-01-05 20:49:17 +0100
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-01-05 20:49:19 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (197.0ms)
+Completed 200 OK in 398ms (Views: 391.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-01-05 20:49:22 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 234ms (Views: 218.0ms | ActiveRecord: 0.0ms)
