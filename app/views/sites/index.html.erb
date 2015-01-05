@@ -1,0 +1,31 @@
+<div id="bouton">
+
+<% @sites.find(:first) do |site| %>
+<p class="btn btn-default"><%= link_to 'Tout' , sites_path(:region_nom => site.region_nom) %></p>
+<p class="btn btn-default"><%= link_to 'Musée' , sites_path(:categorie => 'musee', :region_nom => site.region_nom) %></p>
+<p class="btn btn-default"><%= link_to 'Site Naturel' , sites_path(:categorie => 'naturel', :region_nom => site.region_nom) %></p>
+<p class="btn btn-default"><%= link_to 'Divertissement' , sites_path(:categorie => 'divertissement', :region_nom => site.region_nom) %></p>
+<% end %>
+
+
+</div>
+<% @sites.each do |site| %>
+<div class="row">
+    <div class="thumbnail">
+      <img src=<%= site.image%> alt="...">
+      <div class="caption">
+        <h3><%= site.nom %></h3>
+        <p><%= site.description %></p>
+        <p class="btn btn-default"><%= link_to 'Afficher', site %></p>
+        <p class="btn btn-default"><%= link_to 'Ajouter',new_site_a_visiter_path(:nom_site => site.nom) %></p>
+        <% if current_user.admin? %>
+        <div>
+        <p class="btn btn-default"><%= link_to 'Modifier', edit_site_path(site) %></p>
+        <p class="btn btn-default"><%= link_to 'Supprimer', site, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+</div>
+<% end %>
+<br>

@@ -1,0 +1,18 @@
+<h1 id="t_voy">Mes Voyages :</h1>
+
+<div id="voyage">
+<% @voyages.each do |voyage| %>
+<ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge"><%=  SiteAVisiter.where(:nom_voyage => voyage.nom).count %></span>
+    <%= voyage.nom %>
+  </li>
+  <%= link_to 'Afficher', site_a_visiters_path(:voyage_nom => voyage.nom) %>
+    <%= link_to 'Modifier', edit_voyage_path(voyage) %>
+    <%= link_to 'Supprimer', voyage, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Ajouter', voyages_ajouter_path%> 
+</ul>
+<% end %>
+<br>
+</div>
+<%= link_to 'New Voyage', new_voyage_path %>

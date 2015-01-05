@@ -1,0 +1,21 @@
+<%= form_for(@site_a_visiter) do |f| %>
+  <% if @site_a_visiter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@site_a_visiter.errors.count, "error") %> prohibited this site_a_visiter from being saved:</h2>
+
+      <ul>
+      <% @site_a_visiter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom_voyage %><br>
+    <%= f.select(:nom_voyage, Voyage.where(user_nom: current_user.email).collect {|p| [ p.nom ] }, {include_blank: 'Choisir un voyage'}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

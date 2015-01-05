@@ -1,0 +1,6 @@
+<%= form_for :sitesvoyages do |m| %>
+  <%= m.label(:q, "Ajouter Site:") %>
+  <%= m.hidden_field :nom_voyage%>
+  <%= m.select(:nom_site, Site.all.collect {|p| [ p.nom ] }, {include_blank: 'Choisir un site à ajouter'}) %>
+  <%= m.submit %>
+<% end %>

@@ -1,0 +1,7 @@
+<h1>Choississez une région à visiter :</h1>
+
+
+<br>
+<% @regions.each do |region| %>
+<p class="btn btn-default"> <%= link_to region.nom, sites_path(:region_nom => region.nom) %> <span class="badge"><%= Site.where(:region_nom => region.nom).count %></span> </p>
+ <% end %>

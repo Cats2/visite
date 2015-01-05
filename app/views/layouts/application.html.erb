@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visite</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="barre" class="navbar navbar-inverse" role="navigation" >
+      <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li id="acc"><%= link_to 'Accueil' , regions_path %></li>
+       
+      <% if user_signed_in? %>
+        <li id="cont"><%= link_to 'Mes Voyages' , voyages_path(:user_nom => current_user.email) %></li>
+        <p class="navbar-text pull-right">
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        <% if current_user.admin? %>
+        <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administration <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li id="acc"><%= link_to 'Ajouter Region' , new_region_path %></li>
+            <li id="acc"><%= link_to 'Ajouter Site' , new_site_path %></li>
+            <li class="divider"></li>
+            <li id="acc"><%= link_to 'Supprimer User' , regions_path %></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <% end %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %>
+      </ul>
+  </div>
+      </div>
+      </div>
+
+ <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+
+
+<%= yield %>
+
+</body>
+</html>

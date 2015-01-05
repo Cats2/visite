@@ -1,0 +1,17 @@
+<h1 id="t_sv">Site enregistré dans le voyage : <%= params[:voyage_nom] %></h1>
+<div id="sitevisit">
+<br>
+<% @site_a_visiters.each do |site_a_visiter| %>
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading"><%= site_a_visiter.nom_site %></h4>
+    <p class="list-group-item-text"><%= Site.find_by(:nom => site_a_visiter.nom_site).categorie %></p>
+  </a>
+  <%= link_to 'Afficher', sites_path(:nom => site_a_visiter.nom_site) %>
+  <%= link_to 'Edit', edit_site_a_visiter_path(site_a_visiter) %>
+  <%= link_to 'Destroy', site_a_visiter, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<% end %>
+
+<%= link_to 'New Site a visiter', new_site_a_visiter_path %>
+</div>

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom: MyString
+  categorie: MyString
+  adresse: MyString
+  description: MyText
+  latitude: MyString
+  longitude: MyString
+  tel: MyString
+  web: MyString
+  tarif: 1
+  reduction: 1
+  groupe: 1
+  audioguide: 1
+  guide: 1
+  avis: 1
+
+two:
+  nom: MyString
+  categorie: MyString
+  adresse: MyString
+  description: MyText
+  latitude: MyString
+  longitude: MyString
+  tel: MyString
+  web: MyString
+  tarif: 1
+  reduction: 1
+  groupe: 1
+  audioguide: 1
+  guide: 1
+  avis: 1

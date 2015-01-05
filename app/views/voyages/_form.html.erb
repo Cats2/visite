@@ -1,0 +1,22 @@
+<%= form_for(@voyage) do |f| %>
+  <% if @voyage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@voyage.errors.count, "error") %> prohibited this voyage from being saved:</h2>
+
+      <ul>
+      <% @voyage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nom %><br>
+    <%= f.text_field :nom %>
+    <%= f.hidden_field :user_nom%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

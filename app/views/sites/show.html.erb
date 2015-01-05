@@ -1,0 +1,16 @@
+
+<div id="show_site" class="panel panel-primary">
+  <div class="panel-heading"><%= @site.nom %></div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item"> Adresse : <%= @site.adresse %></li>
+      <li class="list-group-item">Telephone : <%= @site.tel %></li>
+      <li class="list-group-item"><a href=<%= @site.web %>> Site web : <%= @site.web %></a></li>
+    </ul>
+    <%= @site.description %>
+  </div>
+</div>
+
+
+<%= link_to 'Ajouter', edit_site_path(@site) %> |
+<%= link_to 'Retour', sites_path(:region_nom => @site.region_nom) %>

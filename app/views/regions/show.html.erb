@@ -1,0 +1,12 @@
+<p>
+  <strong>Nom:</strong>
+  <%= @region.nom %>
+</p>
+
+<p>
+  <strong>Pays:</strong>
+  <%= @region.pays %>
+</p>
+
+<%= link_to 'Edit', edit_region_path(@region) %> |
+<%= link_to 'Back', regions_path %>

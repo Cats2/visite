@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom site:</strong>
+  <%= @site_a_visiter.nom_site %>
+</p>
+
+<p>
+  <strong>Nom voyage:</strong>
+  <%= @site_a_visiter.nom_voyage %>
+</p>
+
+<%= link_to 'Edit', edit_site_a_visiter_path(@site_a_visiter) %> |
+<%= link_to 'Back', site_a_visiters_path %>

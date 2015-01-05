@@ -1,0 +1,13 @@
+<p>
+  <strong>Nom:</strong>
+  <%= @voyage.nom %>
+  <br>
+  <strong>Nom Utilisateur:</strong>
+  <%= @voyage.user_nom %>
+  <br>
+  <strong>Site :</strong>
+  <%= Voyage.joins(:sites_voyages).where(voyage_nom: @voyage.nom ) %>
+</p>
+
+<%= link_to 'Edit', edit_voyage_path(@voyage) %> |
+<%= link_to 'Back', voyages_path %>
